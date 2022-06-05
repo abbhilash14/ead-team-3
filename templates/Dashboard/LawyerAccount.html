@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Account Creation</title>
+    <link rel="stylesheet" href="/static/Login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+      body{
+        background: #fff;
+        font-family: 'PT Sans', sans-serif;
+      }
+      h2{
+        padding-top: 1.5rem;
+      }
+      a{
+        color: #333;
+      }
+      a:hover{
+        color: #da5767;
+        text-decoration: none;
+      }
+      .card{
+        border: 0.40rem solid #f8f9fa;
+        top: 10%;
+      }
+      .form-control{
+        background-color: #f8f9fa;
+        padding: 20px;
+        padding: 25px 15px;
+        margin-bottom: 1.3rem;
+      }
+      
+      .form-control:focus {
+      
+          color: #000000;
+          background-color: #ffffff;
+          border: 3px solid #da5767;
+          outline: 0;
+          box-shadow: none;
+      
+      }
+      
+      .btn{
+        padding: 0.6rem 1.2rem;
+        background: #da5767;
+        border: 2px solid #da5767;
+      }
+      .btn-primary:hover {
+      
+          
+          background-color: #df8c96;
+          border-color: #df8c96;
+        transition: .3s;
+      
+      }
+
+</style>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto);
+        
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+  
+        .b-example-divider {
+          height: 3rem;
+          background-color: rgba(0, 0, 0, .1);
+          border: solid rgba(0, 0, 0, .15);
+          border-width: 1px 0;
+          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+  
+        .b-example-vr {
+          flex-shrink: 0;
+          width: 1.5rem;
+          height: 100vh;
+        }
+  
+        .bi {
+          vertical-align: -.125em;
+          fill: currentColor;
+        }
+  
+        .nav-scroller {
+          position: relative;
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
+  
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+          
+        }
+        /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .Ready span{
+    font-variation-settings: 'wght' 100;
+    letter-spacing: 1px;
+  
+  }
+  .Ready :hover span{
+    animation:letterwave .5s ease-in-out infinite alternate;
+    animation-delay:calc(var(--order)*500ms);
+  }
+  @keyframes letterwave {
+    to{
+      font-variation-settings: 'wght' 700;
+      letter-spacing:100px;
+    }
+  }
+      </style>
+      
+    
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+     
+</head>
+<body>
+        
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="\Dashboard"><div class="Ready">
+      <span style="--order: 1;">R</span>
+      <span style="--order: 2;">E</span>
+      <span style="--order: 3;">A</span>
+      <span style="--order: 4;">D</span>
+      <span style="--order: 5;">Y</span>
+      <span style="--order: 6;"> </span>
+      <span style="--order: 7;">H</span>
+      <span style="--order: 8;">O</span>
+      <span style="--order: 9;">M</span>
+      <span style="--order: 10;">E</span>
+    </a></div></span>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="\">Sign out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-md-5">
+     <div class="card">
+       <h2 class="card-title text-center">Create Lawyer Account</h2>
+        <div class="card-body py-md-4">
+         <form _lpchecked="1">
+            <div class="form-group">
+               <input type="text" class="form-control" id="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+               <input type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="Phone" placeholder="Phone Number">
+         </div><span class="ppp"></span>
+         <div class="form-group">
+          <input type="text" class="form-control" id="Address" placeholder="Address">
+       </div>
+ 
+                              
+                            
+     <div class="form-group">
+       <input type="password" class="form-control" id="password" placeholder="Password">
+     </div>
+     <div class="form-group">
+        <input type="password" class="form-control" id="Confirm-Password" placeholder="Confirm-Password">
+     </div>
+     <div class="d-flex flex-row align-items-center justify-content-between">
+     <button class="btn btn-primary" onclick="validate()">Create Account</button>
+            </div>
+         </form>
+       </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script>
+
+    function validate(){
+        alert("Lawyer Account Created Successfully");
+    }</script>
+</body>
+</html>

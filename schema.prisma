@@ -1,0 +1,165 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model users{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  username String @unique
+  userdetails Userdetails[]
+  housedetails Housedetails[]
+  wishlist Wishlist[]
+  payment Paymentdetails[]
+  rented Rented[]
+  sold Sold[]
+  valuationdetails ValuationDetails[]
+  bufferhousedetails BufferHousedetails[]
+  password String
+  roll String
+}
+model Userdetails{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String 
+  useraddress String
+  userphone String
+  useremail String
+  accountType String
+}
+
+model Housedetails{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String 
+  postid String @unique
+  forrent ForRent[]
+  forsale ForSale[]
+  wishlist Wishlist[]
+  rented Rented[]
+  sold Sold[]
+  valuationdetails ValuationDetails[]
+  houseType String
+  type String
+  postimage String
+  bedrooms Int
+  bathrooms Int
+  balcony Int
+  squarefeet Int
+  carparking Int
+  furnished String
+  facing String
+  address String
+  water String
+  electricity String
+  age Int
+  landmark String
+  housestatus String
+  createdDate DateTime
+  price Float
+}
+model ForRent{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  postidDummy Housedetails @relation(fields: [postid],references: [postid])
+  postid String
+  rentdeadline Int
+  others String
+}
+
+model ForSale{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  postidDummy Housedetails @relation(fields: [postid],references: [postid])
+  postid String
+  landdocument String
+  others String
+}
+
+model Wishlist{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String 
+  postidDummy Housedetails @relation(fields: [postid],references: [postid])
+  postid String
+}
+
+model Rented{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String  
+  postidDummy Housedetails @relation(fields: [postid],references: [postid])
+  postid String
+  currentmonthpaymentstatus String
+  monthspaid Int
+  rentedrate Float
+  renteddate DateTime
+}
+
+model Sold{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String 
+  postidDummy Housedetails @relation(fields: [postid],references: [postid])
+  postid String
+  solddate DateTime
+}
+
+model Paymentdetails{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String 
+  paymentid String
+  amount Int
+  currency String
+  receipt String
+  attempts Int
+  createdate DateTime
+}
+
+model ValuationDetails{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String 
+  postidDummy Housedetails @relation(fields: [postid],references: [postid])
+  postid String
+  postStatus String
+}
+
+model BufferHousedetails{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userDummy users @relation(fields: [username],references: [username])
+  username String 
+  postid String @unique
+  bufferforsale BufferForSale[]
+  houseType String
+  type String
+  postimage String
+  bedrooms Int
+  bathrooms Int
+  balcony Int
+  squarefeet Int
+  carparking Int
+  furnished String
+  facing String
+  address String
+  water String
+  electricity String
+  age Int
+  landmark String
+  housestatus String
+  createdDate DateTime
+  postStatus String
+}
+
+model BufferForSale{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  postidDummy BufferHousedetails @relation(fields: [postid],references: [postid])
+  postid String
+  landdocument String
+  others String
+}

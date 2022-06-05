@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./static/Login.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/Login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
 <body>
     <div class="parent clearfix">
         <div class="bg-illustration">
-          <div style="color:#f794a4; font-size:300%; font-family: Inconsolata; ">
+          <div style="color:#f794a4; font-size:300%; font-family:Roboto; ">
             Admin-Ready Homes 
         </div>
           <div class="burger-btn">
@@ -23,13 +23,13 @@
         </div>
         
         <div class="login">
-          <div class="container">
+          <div class="container" >
             <h1>Login to access to<br />your account</h1>
         
             <div class="login-form">
-              <form action="">
-                <input type="email" placeholder="E-mail Address">
-                <input type="password" placeholder="Password">
+              <form action="" id = "myForm" >
+                <input type="UserName" placeholder="UserName" ><p class="uservalid"></p>
+                <input type="password" placeholder="Password" ><p class="Passvalid"></p>
     
                 <div class="remember-form">
                   <input type="checkbox">
@@ -39,7 +39,7 @@
                   <a href="#">Forgot Password ?</a>
                 </div>
     
-                <button type="submit"><a href="/Dashboard">LOG-IN</button></a>
+                <a href="/Dashboard"><button type="submit" >LOG-IN</a>
     
               </form>
             </div>
@@ -47,5 +47,21 @@
           </div>
           </div>
       </div>
+      {% comment %} <script>
+        document.getElementById("myForm").onsubmit = function(e) {
+          console.log("sss");
+       /*   e.AddActionListener();
+          e.preventDefault();
+          let user = document.getElementById("UserName");
+          let pass = document.getElementById("Password");
+          if(user ==""){
+            document.getElementById("uservalid").innerHTML ="Please fill the username" ;
+          }
+          if(pass==""){
+            document.getElementById("Passvalid").innerHTML ="Please fill the Password" ;
+          }*/
+          window.location.assign("https://www.w3schools.com")
+        };
+      </script> {% endcomment %}
 </body>
 </html>
